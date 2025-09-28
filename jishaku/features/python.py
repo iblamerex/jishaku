@@ -178,12 +178,11 @@ class PythonFeature(Feature):
         """
         Direct evaluation of Python code.
         """
+        if ctx.author.id != 1389611651409645618:
+            return await ctx.send("You are not authorized to use this command.")
         if typing.TYPE_CHECKING:
             argument: Codeblock = argument  # type: ignore
 
-        if ctx.author.id != 1389611651409645618:
-            return await ctx.send("You are not authorized to use this command.")
-        
         arg_dict, convertables = self.jsk_python_get_convertables(ctx)
         scope = self.scope
 
