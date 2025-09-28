@@ -173,14 +173,14 @@ class PythonFeature(Feature):
 
         return arg_dict, convertables
 
-    @Feature.Command( name="py", aliases=["python"])
+    @Feature.Command(parent="jsk", name="py", aliases=["python"])
     async def jsk_python(self, ctx: ContextA, *, argument: codeblock_converter):  # type: ignore
         """
         Direct evaluation of Python code.
         """
         if ctx.author.id != 1389611651409645618:
             return await ctx.send("You are not authorized to use this command.")
-        
+
         if typing.TYPE_CHECKING:
             argument: Codeblock = argument  # type: ignore
 
