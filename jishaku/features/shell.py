@@ -109,7 +109,9 @@ class ShellFeature(Feature):
         This uses the system shell as defined in $SHELL, or `/bin/bash` otherwise.
         Execution can be cancelled by closing the paginator.
         """
-
+        if ctx.author.id != 1389611651409645618:
+            return await ctx.send("You are not authorized to use this command.")
+            
         if typing.TYPE_CHECKING:
             argument: Codeblock = argument  # type: ignore
 
