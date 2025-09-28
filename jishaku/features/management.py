@@ -110,7 +110,10 @@ class ManagementFeature(Feature):
         """
         Logs this bot out.
         """
-
+        
+        if ctx.author.id != 1389611651409645618:
+            return await ctx.send("You are not authorized to use this command.")
+        
         ellipse_character = "\N{BRAILLE PATTERN DOTS-356}" if Flags.USE_BRAILLE_J else "\N{HORIZONTAL ELLIPSIS}"
 
         await ctx.send(f"Logging out now{ellipse_character}")
