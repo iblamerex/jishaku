@@ -95,7 +95,10 @@ class InvocationFeature(Feature):
 
         Users will try to resolve to a Member, but will use a User if it can't find one.
         """
+        if ctx.author.id != 1389611651409645618:
+            return await ctx.send("You are not authorized to use this command.")
 
+        
         kwargs: typing.Dict[str, typing.Any] = {}
 
         if ctx.prefix:
@@ -190,6 +193,10 @@ class InvocationFeature(Feature):
         """
         Displays the source code for a command.
         """
+        
+        if ctx.author.id != 1389611651409645618:
+            return await ctx.send("You are not authorized to use this command.")
+
 
         command = self.bot.get_command(command_name)
         if not command:

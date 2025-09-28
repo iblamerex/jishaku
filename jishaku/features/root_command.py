@@ -158,8 +158,8 @@ class RootCommand(Feature):
         #await ctx.send("\n".join(summary))
         rex = discord.Embed(
                 description="\n".join(summary),
-                color=0x01f5b6)
-        rex.set_footer(text=f"Average websocket latency: {round(self.bot.latency * 1000, 2)}ms",
+                color=0xAADBE2)
+        rex.set_footer(text=f"made by orewa.rex",
                              icon_url=self.bot.user.display_avatar.url)
         rex.set_thumbnail(url=self.bot.user.display_avatar.url)
         rex.set_author(name=ctx.author,icon_url=ctx.author.avatar.url
